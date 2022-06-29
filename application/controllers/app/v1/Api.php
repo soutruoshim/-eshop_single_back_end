@@ -441,6 +441,7 @@ Defined Methods:-
         $type = (isset($_POST['type']) && $_POST['type'] == 'payment_method') ? 'payment_method' : 'all';
         $this->form_validation->set_rules('type', 'Setting Type', 'trim|xss_clean');
         $this->form_validation->set_rules('user_id', 'User id', 'trim|numeric|xss_clean');
+        
         if (!$this->form_validation->run()) {
             $this->response['error'] = true;
             $this->response['message'] = strip_tags(validation_errors());
